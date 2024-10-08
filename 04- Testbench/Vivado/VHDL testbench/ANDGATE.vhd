@@ -3,7 +3,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
--- this is the entity
+-- this is the entity, the name entity is ANDGATE
 entity ANDGATE is
   port ( 
     I1 : in std_logic;
