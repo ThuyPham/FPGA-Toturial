@@ -18,7 +18,7 @@ architecture behave of and_vhdl_tb is
     signal r_I2: std_logic;
     signal w_O: std_logic;
 begin
-    -- instantiate the uut, using and_vhdl entity in and_vhdl_tb architecture
+    -- instantiate the uut, using ANDGATE entity in and_vhdl_tb architecture
     -- the Working Library: contains the compiled version of your design. The contents of a working library change every time you compile your design.
     -- the default working library is named "work"
     uut : entity work.ANDGATE
