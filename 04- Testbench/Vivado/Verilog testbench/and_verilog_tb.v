@@ -1,0 +1,55 @@
+// Verilog Test Bench template for design : and_verrilog
+// 
+// Simulation tool : Xilinx Vivado (Verilog)
+// 
+`timescale 1 ps/ 1 ps
+module and_verrilog_vlg_tst();
+// test vector input registers
+reg a;
+reg b;
+// wires                                               
+wire c;
+// assign statements (if any)                          
+and_verrilog i1 (
+// port map - connection between master ports and signals/registers   
+	.a(a),
+	.b(b),
+	.c(c)
+);
+initial                                                
+begin                                                  
+// code that executes only once                        
+// insert code here --> begin                          
+  a = 0;             
+  b = 0;                                                     
+// --> end                                             
+$display("Running testbench");                       
+end                                                    
+always                                                 
+// optional sensitivity list                           
+// @(event1 or event2 or .... eventn)                  
+begin                                                  
+// code executes for every event on sensitivity list   
+// insert code here --> begin                          
+  $dumpfile("and_verilog_test.vcd"); $dumpvars;
+  $monitor("Time= %3d : a= %d,b= %d, c=%d \n",$time,a,b,c);
+  a <= 1'b0;
+  b <= 1'b0;
+  #5;
+  $monitor("Time= %3d : a= %d,b= %d, c=%d \n",$time,a,b,c);
+  a <= 1'b0;
+  b <= 1'b1;
+  #5;   
+  $monitor("Time= %3d : a= %d,b= %d, c=%d \n",$time,a,b,c);
+  a <= 1'b1;
+  b <= 1'b0;
+  #5;  
+  $monitor("Time= %3d : a= %d,b= %d, c=%d \n",$time,a,b,c);
+  a <= 1'b1;
+  b <= 1'b1;
+  #5;
+  $display("Finish testbench");  
+                                                                                                    
+// --> end                                             
+end                                                    
+endmodule
